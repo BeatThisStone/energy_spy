@@ -39,7 +39,7 @@ extern "C" fn on_menu_click(_userdata: *mut c_void) {
                 gauge = (std::mem::transmute::<_, GetHpGauge>(addr))(HEADER);
                 log!("Gauge addr: {:?}", gauge);
             } else {
-                let message = CString::new("Header not in scope.").unwrap();
+                let message = CString::new("Header not in scope").unwrap();
                 (vtable.gui_show_notification)(message.as_ptr());
                 return;
             }
